@@ -14,11 +14,12 @@ public class WelcomeController {
      * @GetMapping 어떤 url로 welcome() 메서드를 호출할지 지정(get 방식)
      */
     @GetMapping("/helloworld")
-    public String welcome(String name, int age, Model model) {
-        System.out.println("name = " + name);
-        System.out.println("age = " + age);
-        model.addAttribute("name", name);
-        model.addAttribute("age", age);
+    public String welcome(Model model) {
+        model.addAttribute("name", "tsseo");
+        model.addAttribute("value", 1000);
+        model.addAttribute("taxed_value", 30);
+        model.addAttribute("in_ca", true);
+
         return "welcome";
     }
 }

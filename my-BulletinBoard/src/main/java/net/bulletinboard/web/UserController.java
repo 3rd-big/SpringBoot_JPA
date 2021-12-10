@@ -19,7 +19,11 @@ public class UserController {
     public String create(User user) {
         System.out.println("user = " + user);
         users.add(user);
-        return "index";
+        /**
+         *  list만 리턴하면 templates 디렉토리의 list.html만 호출
+         *  return "list";
+         */
+        return "redirect:/list";
     }
 
     @GetMapping("/list")

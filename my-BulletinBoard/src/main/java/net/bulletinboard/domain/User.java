@@ -1,11 +1,23 @@
-package net.bulletinboard.web;
+package net.bulletinboard.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * 필드명이 중요한게 아님.. set[여기] form.html 에서 넘어온 값
  * 자동으로 값을 세팅하는 부분은 추후 스프링 내용 공부할 것
  */
+@Entity
 public class User {
+    @Id
+    @GeneratedValue // id 값을 자동으로 1씩 추가
+    private Long id;
+
+    @Column(nullable = false, length = 20)
     private String userId;
+
     private String password;
     private String name;
     private String email;

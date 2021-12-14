@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 /**
  * @RequestMapping
@@ -20,6 +22,26 @@ public class UserController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @GetMapping("/loginForm")
+    public String loginForm() {
+        return "/user/login";
+    }
+
+    @PostMapping("/login")
+    public String login(String userId, String password, HttpSession session) {
+        User user = userRepository.findByUserId(userId);
+        if (user == null) {
+            return "redirect:/users/loginForm";
+        }
+        if (!password.equals(user.getPassword())) {
+            return "redirect:/users/loginForm";
+        }
+
+        session.setAttribute("user", user);
+
+        return "redirect:/";
+    }
 
     @GetMapping("/form")
     public String form() {

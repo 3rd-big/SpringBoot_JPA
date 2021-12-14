@@ -1,9 +1,6 @@
 package net.bulletinboard.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * 필드명이 중요한게 아님.. set[여기] form.html 에서 넘어온 값
@@ -12,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class User {
     @Id
-    @GeneratedValue // id 값을 자동으로 1씩 추가
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // id 값을 자동으로 1씩 추가
     private Long id;
 
     @Column(nullable = false, length = 20)

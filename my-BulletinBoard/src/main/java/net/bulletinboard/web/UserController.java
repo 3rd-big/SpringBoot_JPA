@@ -38,14 +38,14 @@ public class UserController {
             return "redirect:/users/loginForm";
         }
 
-        session.setAttribute("user", user);
+        session.setAttribute("sessionUser", user);
 
         return "redirect:/";
     }
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {
-        session.removeAttribute("user");
+        session.removeAttribute("sessionUser");
         return "redirect:/";
     }
 

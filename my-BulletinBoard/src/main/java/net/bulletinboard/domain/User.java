@@ -12,7 +12,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)  // id 값을 자동으로 1씩 추가
     private Long id;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 20, unique = true)
     private String userId;
 
     private String password;
@@ -21,6 +21,10 @@ public class User {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public void setPassword(String password) {

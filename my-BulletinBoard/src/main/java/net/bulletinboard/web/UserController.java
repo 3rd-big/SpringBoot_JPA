@@ -20,6 +20,12 @@ public class UserController {
 
 //    private List<User> users = new ArrayList<User>();
 
+    /**
+     *  @Autowired
+     *  해당 애너테이션이 없으면, NullPointException Error
+     *  UserRepository는 스프링이 관리함
+     *  내가 UserRepository를 사용할테니, 해당 값에 할당 요청
+     */
     @Autowired
     private UserRepository userRepository;
 

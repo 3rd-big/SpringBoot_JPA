@@ -27,6 +27,10 @@ public class User {
         return id;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
     public boolean matchId(Long newId) {
         if (newId == null) {
             return false;

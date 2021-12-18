@@ -1,2 +1,2 @@
-INSERT INTO USER (USER_ID, PASSWORD, NAME, EMAIL) VALUES ('tsseo', 'test', '¼­ÅÂ¼ö', 'tsseo@naver.com');
-INSERT INTO USER (USER_ID, PASSWORD, NAME, EMAIL) VALUES ('taesoo0220', 'test', '¼­ÅÂ¼ö2', 'taesoo0220@naver.com');
+INSERT INTO USER (USER_ID, PASSWORD, NAME, EMAIL) VALUES ('tsseo', 'test', 'ì„œíƒœìˆ˜', 'tsseo@naver.com');
+INSERT INTO USER (USER_ID, PASSWORD, NAME, EMAIL) VALUES ('taesoo0220', 'test', 'ì„œíƒœìˆ˜2', 'taesoo0220@naver.com');

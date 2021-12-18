@@ -19,6 +19,11 @@ target/
 *.iml
 *.ipr
 
+# User-specific configurations
+.idea/libraries/
+.idea/vcs.xml
+
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/

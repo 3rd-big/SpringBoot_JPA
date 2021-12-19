@@ -11,6 +11,7 @@
     <groupId>net.bulletinboard</groupId>
     <artifactId>my-BulletinBoard</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>my-BulletinBoard</name>
     <description>my-BulletinBoard</description>
     <properties>

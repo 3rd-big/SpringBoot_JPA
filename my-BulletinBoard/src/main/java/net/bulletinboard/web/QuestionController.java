@@ -38,7 +38,10 @@ public class QuestionController {
         }
 
         User sessionUser = HttpSessionUtils.getUserFromSession(session);
-        Question newQuestion = new Question(sessionUser.getUserId(), title, contents);
+        /**
+         * Object 에서 get() method를 사용하는건 안좋은 습관!!
+         */
+        Question newQuestion = new Question(sessionUser, title, contents);
         questionRepository.save(newQuestion);
         return "redirect:/";
     }

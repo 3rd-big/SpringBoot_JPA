@@ -41,4 +41,9 @@ public class Question {
     public Question() {
 
     }
+
+    public void update(String title, String contents) {
+        this.title = title;
+        this.contents = contents;
+    }
 }

@@ -1,6 +1,7 @@
 package net.bulletinboard.domain;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * 필드명이 중요한게 아님.. set[여기] form.html 에서 넘어온 값
@@ -66,6 +67,19 @@ public class User {
         this.password = newUser.password;
         this.name = newUser.name;
         this.email = newUser.email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+        User user = (User) o;
+        return getId().equals(user.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 
     @Override

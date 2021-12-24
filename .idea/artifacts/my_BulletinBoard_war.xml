@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="my-BulletinBoard:war">
+    <output-path>$PROJECT_DIR$/my-BulletinBoard/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>my-BulletinBoard</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="my-BulletinBoard-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="my-BulletinBoard:war exploded" />
+    </root>
+  </artifact>
+</component>

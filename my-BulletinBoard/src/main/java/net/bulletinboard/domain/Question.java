@@ -3,6 +3,7 @@ package net.bulletinboard.domain;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @Entity
 public class Question {
@@ -16,9 +17,15 @@ public class Question {
 
 //    private String writer;
     private String title;
+
+    @Lob
     private String contents;
 
     private LocalDateTime createDate;
+
+    @OneToMany(mappedBy = "question")
+    @OrderBy("id ASC")
+    private List<Answer> answers;
 
     public Question(User writer, String title, String contents) {
         super();

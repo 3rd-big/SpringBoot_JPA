@@ -54,6 +54,10 @@ public class Answer {
         return id.equals(answer.id);
     }
 
+    public boolean isSameWriter(User loginUser) {
+        return loginUser.equals(this.writer);
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);

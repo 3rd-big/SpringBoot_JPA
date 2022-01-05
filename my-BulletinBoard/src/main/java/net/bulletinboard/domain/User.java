@@ -11,12 +11,7 @@ import java.util.Objects;
  * 자동으로 값을 세팅하는 부분은 추후 스프링 내용 공부할 것
  */
 @Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // id 값을 자동으로 1씩 추가
-    @JsonProperty
-    private Long id;
-
+public class User extends AbstractEntity{
     @Column(nullable = false, length = 20, unique = true)
     @JsonProperty
     private String userId;
@@ -32,10 +27,6 @@ public class User {
         this.userId = userId;
     }
 
-    public Long getId() {
-        return id;
-    }
-
     public String getUserId() {
         return userId;
     }
@@ -44,7 +35,7 @@ public class User {
         if (newId == null) {
             return false;
         }
-        return newId.equals(id);
+        return newId.equals(getId());
     }
 
     public void setPassword(String password) {
@@ -78,22 +69,9 @@ public class User {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return getId().equals(user.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
-
-    @Override
     public String toString() {
         return "User{" +
-                "userId='" + userId + '\'' +
+                super.toString() +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
